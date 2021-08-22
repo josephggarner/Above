@@ -1,5 +1,4 @@
 using UnityEngine;
-// {requires component (BoxCollider)}
 
 public class Interactable : MonoBehaviour {
     public float radius = 3f;
