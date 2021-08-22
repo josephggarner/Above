@@ -23,7 +23,6 @@ public class InteractableCheck : MonoBehaviour
 
         // If an object was found...
         if (interactable != null) {
-            Debug.Log(interactable.nameOfInteractable);
             // Enable message for user to interact with object
             interactionText.text = "Interact with " + interactable.nameOfInteractable;
             interactionText.gameObject.SetActive(true);
@@ -42,8 +41,8 @@ public class InteractableCheck : MonoBehaviour
     // Returns a reference to the interactable object found, or null if none are found
     Interactable raycast() {
         RaycastHit hit;
-        Vector3 start = new Vector3(player.transform.position.x, player.transform.position.y + 1.5f, player.transform.position.z);
-        if (Physics.Raycast(start, transform.forward, out hit, interactDistance)) {
+        Vector3 start = new Vector3(cam.transform.position.x, cam.transform.position.y, cam.transform.position.z) + cam.transform.up;
+        if (Physics.Raycast(start, (cam.transform.forward * 5), out hit, interactDistance)) {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != null) {
                 return interactable;
