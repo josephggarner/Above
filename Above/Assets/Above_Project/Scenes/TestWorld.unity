@@ -15120,11 +15120,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 337114707701659198, guid: 09d178497c70faf4e9d4b84e95211a0c, type: 3}
   m_PrefabInstance: {fileID: 1962203971}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1159091972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2592481768496262308, guid: 7900b170fe3f1974586786ad9598d5c3, type: 3}
-  m_PrefabInstance: {fileID: 968433691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1163407921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24131,10 +24126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8563d96610bf4f91eec2dd64a6cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRoot: {fileID: 1159091972}
   player: {fileID: 1774533813}
   interactionText: {fileID: 2143808376}
-  interactDistance: 2
+  interactDistance: 5
 --- !u!1001 &1789224113
 PrefabInstance:
   m_ObjectHideFlags: 0
