@@ -6,14 +6,21 @@ using UnityEngine.InputSystem;
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
 
+
+
+
 namespace StarterAssets
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
 #endif
+	
 	public class ThirdPersonController : MonoBehaviour
 	{
+		private Inventory inv;
+		
+
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 2.0f;
@@ -105,7 +112,7 @@ namespace StarterAssets
 			_hasAnimator = TryGetComponent(out _animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
-
+			inv = GetComponent<Inventory>();
 			AssignAnimationIDs();
 
 			// reset our timeouts on start
@@ -120,10 +127,23 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+	
+			
 		}
 
 		private void LateUpdate()
 		{
+			if(!inv.GetInventoryStatus())
+			{
+				LockCameraPosition = false;
+				Cursor.lockState = CursorLockMode.None;
+			}
+            else
+            {
+				LockCameraPosition = true;
+				Cursor.lockState = CursorLockMode.None;
+
+			}
 			CameraRotation();
 		}
 
