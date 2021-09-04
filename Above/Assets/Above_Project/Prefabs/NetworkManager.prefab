@@ -95,8 +95,9 @@ MonoBehaviour:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 387630039060307769}
     RegisteredScenes:
-    - TestWorld
     - MultiplayerTest
+    - Multiplayer_World
+    - Multiplayer_Login
     AllowRuntimeSceneChanges: 0
     NetworkPrefabs:
     - Prefab: {fileID: 1507740890184777960, guid: 3c88a9ffee0a3f34cb44babae8615c01,
@@ -116,9 +117,9 @@ MonoBehaviour:
     TimeResyncInterval: 30
     EnableNetworkVariable: 1
     EnsureNetworkVariableLengthSafety: 0
-    EnableSceneManagement: 1
+    EnableSceneManagement: 0
     ForceSamePrefabs: 1
-    UsePrefabSync: 0
+    UsePrefabSync: 1
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120
     RpcHashSize: 0

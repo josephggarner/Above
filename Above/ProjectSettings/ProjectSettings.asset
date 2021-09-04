@@ -129,7 +129,10 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -583,7 +586,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: STARTER_ASSETS_PACKAGES_CHECKED;UNITY_POST_PROCESSING_STACK_V2
+    1: STARTER_ASSETS_PACKAGES_CHECKED;UNITY_POST_PROCESSING_STACK_V2;SERVER_BUILD
     7: UNITY_POST_PROCESSING_STACK_V2
     13: UNITY_POST_PROCESSING_STACK_V2
     14: UNITY_POST_PROCESSING_STACK_V2
@@ -596,7 +599,8 @@ PlayerSettings:
     30: UNITY_POST_PROCESSING_STACK_V2
     32: UNITY_POST_PROCESSING_STACK_V2
     33: UNITY_POST_PROCESSING_STACK_V2
-  additionalCompilerArguments: {}
+  additionalCompilerArguments:
+    1: []
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
@@ -686,7 +690,13 @@ PlayerSettings:
   activeInputHandler: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  qualitySettingsNames: []
+  qualitySettingsNames:
+  - Very Low
+  - Low
+  - Medium
+  - High
+  - Very High
+  - Ultra
   projectName: 
   organizationId: loki-games
   cloudEnabled: 0

@@ -18,6 +18,7 @@ public class NetworkCommandLine : MonoBehaviour
         {
             switch (mlapiValue)
             {
+
                 case "server":
                     netManager.StartServer();
                     break;

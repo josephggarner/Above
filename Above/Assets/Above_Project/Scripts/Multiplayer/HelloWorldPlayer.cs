@@ -46,7 +46,7 @@ namespace HelloWorld
 
         void Update()
         {
-            //transform.position = Position.Value;
+            transform.position = Position.Value;
         }
     }
 }
