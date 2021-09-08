@@ -133,17 +133,17 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
-			if(!inv.GetInventoryStatus())
-			{
-				LockCameraPosition = false;
-				Cursor.lockState = CursorLockMode.None;
-			}
-            else
-            {
-				LockCameraPosition = true;
-				Cursor.lockState = CursorLockMode.None;
+			// if(!inv.GetInventoryStatus())
+			// {
+			// 	LockCameraPosition = false;
+			// 	Cursor.lockState = CursorLockMode.None;
+			// }
+            // else
+            // {
+			// 	LockCameraPosition = true;
+			// 	Cursor.lockState = CursorLockMode.None;
 
-			}
+			// }
 			CameraRotation();
 		}
 
