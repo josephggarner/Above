@@ -24,7 +24,7 @@ public class InteractableCheck : MonoBehaviour
         // If an object was found...
         if (interactable != null) {
             // Enable message for user to interact with object
-            interactionText.text = "Interact with " + interactable.nameOfInteractable;
+            interactionText.text = interactable.getActionText();
             interactionText.gameObject.SetActive(true);
 
             // Interact with item if user presses interaction key
