@@ -5,11 +5,13 @@ using UnityEngine;
 public class Interactable : MonoBehaviour {
 
     public InteractableObject interactable;
+    public Animator animator;
 
     void Start() {
         SphereCollider sc = gameObject.AddComponent(typeof(SphereCollider)) as SphereCollider;
         sc.radius *= interactable.interactionRadius;
         sc.isTrigger = true;
+        animator = GetComponent<Animator>();
     }
 
     void OnDrawGizmosSelected () {
@@ -21,6 +23,9 @@ public class Interactable : MonoBehaviour {
         if (interactable.type == "PickUp") {
             // Inventory.instance.Add(item);
             Destroy(gameObject);
+        } else if (interactable.type == "Animate") {
+            Debug.Log("You're animating a " + interactable.name);
+            animator.Play("Close");
         } else {
             Debug.Log("No interaction logic for this type.");
         }
@@ -30,6 +35,8 @@ public class Interactable : MonoBehaviour {
         string returnString = interactable.name;
         if (interactable.type == "PickUp") {
             return "Pick up " + returnString;
+        } else if (interactable.type == "Animate") {
+            return "Open " + returnString;
         } else {
             return "Interact with ";
         }
