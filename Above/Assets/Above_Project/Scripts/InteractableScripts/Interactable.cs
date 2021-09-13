@@ -17,9 +17,11 @@ public class Interactable : MonoBehaviour {
     }
 
     public void Interact() {
-        Debug.Log("Interacting with " + interactable.name);
         if (interactable.type == "PickUp") {
-            Debug.Log("This item is of type \"PickUp\"");
+            // Inventory.instance.Add(item);
+            Destroy(gameObject);
+        } else {
+            Debug.Log("No interaction logic for this type.");
         }
     }
 
