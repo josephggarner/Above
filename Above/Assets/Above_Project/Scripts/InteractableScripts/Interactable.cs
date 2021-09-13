@@ -25,7 +25,12 @@ public class Interactable : MonoBehaviour {
             Destroy(gameObject);
         } else if (interactable.type == "Animate") {
             Debug.Log("You're animating a " + interactable.name);
-            animator.Play("Close");
+            if (interactable.isOpen) {
+                animator.Play("Close");
+            } else {
+                animator.Play("Open");
+            }
+            interactable.isOpen = !interactable.isOpen;
         } else {
             Debug.Log("No interaction logic for this type.");
         }
