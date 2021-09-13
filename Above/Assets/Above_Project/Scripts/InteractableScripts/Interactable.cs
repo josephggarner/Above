@@ -8,12 +8,12 @@ public class Interactable : MonoBehaviour {
 
     void Start() {
         SphereCollider sc = gameObject.AddComponent(typeof(SphereCollider)) as SphereCollider;
-        sc.radius *= 3;
+        sc.radius *= interactable.interactionRadius;
     }
 
     void OnDrawGizmosSelected () {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 3f);
+        Gizmos.DrawWireSphere(transform.position, interactable.interactionRadius);
     }
 
     public void Interact() {
