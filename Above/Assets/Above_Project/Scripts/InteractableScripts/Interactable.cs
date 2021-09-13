@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour {
     void Start() {
         SphereCollider sc = gameObject.AddComponent(typeof(SphereCollider)) as SphereCollider;
         sc.radius *= interactable.interactionRadius;
+        sc.isTrigger = true;
     }
 
     void OnDrawGizmosSelected () {
@@ -31,6 +32,22 @@ public class Interactable : MonoBehaviour {
             return "Pick up " + returnString;
         } else {
             return "Interact with ";
+        }
+    }
+
+    public string getType() {
+        return interactable.type;
+    }
+
+    void OnTriggerEnter(Collider collider) {
+        if (interactable.type == "Vicinity") {
+            switch (interactable.vicinityAction) {
+                case "Fire":
+                    Debug.Log("OMG this " + interactable.name + " is on fire!!!!!");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

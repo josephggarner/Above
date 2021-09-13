@@ -22,7 +22,7 @@ public class InteractableCheck : MonoBehaviour
         Interactable interactable = raycast();
 
         // If an object was found...
-        if (interactable != null) {
+        if (interactable != null && interactable.getType() != "Vicinity") {
             // Enable message for user to interact with object
             interactionText.text = interactable.getActionText();
             interactionText.gameObject.SetActive(true);

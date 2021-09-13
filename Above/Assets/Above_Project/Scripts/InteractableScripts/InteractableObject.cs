@@ -8,5 +8,6 @@ public class InteractableObject : ScriptableObject {
     public new string name;
     public string type;
     public float interactionRadius = 3f;
+    public string vicinityAction;
     
 }
