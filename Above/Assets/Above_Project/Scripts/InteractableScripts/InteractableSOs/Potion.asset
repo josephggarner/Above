@@ -15,3 +15,5 @@ MonoBehaviour:
   name: Health Potion
   type: PickUp
   interactionRadius: 3
+  vicinityAction: 
+  isOpen: 0
